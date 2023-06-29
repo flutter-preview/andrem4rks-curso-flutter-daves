@@ -1,36 +1,45 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
-  int valor = 30;
-
   runApp(MyApp(
-    title: 'My App',
-    valor: valor,
+    nome: 'Pedro',
   ));
 }
 
-class MyApp extends StatelessWidget {
-  final String title;
-  final int valor;
-  const MyApp({Key? key, this.title='', this.valor=0}) : super(key: key);
+class MyApp extends StatefulWidget {
+  final String nome;
+  const MyApp({super.key, this.nome = ''});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int salario = 7000;
+
+  void aumentaSalario (int valor) {
+    setState(() {
+      salario += valor;
+    });
+  }
+
+  void diminuiSalario (int valor) {
+    setState(() {
+      salario -= valor;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: Center(
+    return Container(
+      child: Center(
+        child: GestureDetector(
+          onTap: () {
+            aumentaSalario(100);
+          },
           child: Text(
-            'Hello World, Valor = $valor',
+            'O salário de ${widget.nome} é de $salario',
             textDirection: TextDirection.ltr,
-            style: TextStyle(
-                fontSize: 50,
-                color: Colors.black87,
-                decoration: TextDecoration.none),
           ),
         ),
       ),
