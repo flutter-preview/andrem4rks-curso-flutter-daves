@@ -21,8 +21,8 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Aplicativo Exemploe Scaffold'),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           
           children: [
             Center(
@@ -38,6 +38,16 @@ class _MyAppState extends State<MyApp> {
             Center(
               child: Text(
                 'Segunda Linha',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Center(
+              child: Text(
+                'Terceira Linha',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
