@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -21,13 +21,30 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Aplicativo Exemploe Scaffold'),
         ),
-        body: Center(
-          child: Text(
-            'Meu Aplicativo',
-            style: TextStyle(
-              fontSize: 30,
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          
+          children: [
+            Center(
+              child: Text(
+                'Primeira Linha',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
+
+            Center(
+              child: Text(
+                'Segunda Linha',
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
