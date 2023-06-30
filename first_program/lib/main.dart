@@ -19,27 +19,23 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Aplicativo Exemploe Scaffold'),
+          title: Text('Aplicativo Exemplo Imagens'),
         ),
-        body: Stack(
-          alignment: AlignmentDirectional.center,
-          children: [
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.blue,
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Column(children: [
+            Image.asset(
+              'images/galo_seco.jpeg',
+              scale: 4,
             ),
-
-            Positioned(
-              right: 10,
-              bottom: 10,
-              child: Container(
-                height: 100,
-                width: 100,
-                color: Colors.red,
-              ),
+            Image.asset(
+              'images/blind_frog.jpeg',
+              height: 300,
+              width: 300,
+              fit: BoxFit.contain,
             ),
-          ],
+          ]),
         ),
       ),
     );
