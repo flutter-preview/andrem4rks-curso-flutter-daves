@@ -21,21 +21,10 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Aplicativo Exemplo Imagens'),
         ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(children: [
-            Image.asset(
-              'images/galo_seco.jpeg',
-              scale: 4,
-            ),
-            Image.asset(
-              'images/blind_frog.jpeg',
-              height: 300,
-              width: 300,
-              fit: BoxFit.contain,
-            ),
-          ]),
+        body: Image.network('https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg',
+        fit: BoxFit.fitHeight,
+        width: double.infinity,
+        height: double.infinity,
         ),
       ),
     );
